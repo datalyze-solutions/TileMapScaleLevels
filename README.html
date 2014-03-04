@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style type="text/css">
+    body {    
+        background: rgba(0, 0, 0, 0.1);
+        font-family: Arial, Times, serif;
+    }
+    .content-wrapper {
+        background: rgba(0, 0, 0, 0.66);
+        color: white;
+        margin: 10px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 20px rgba(15, 12, 15, 0.7);
+    }
+    .content {
+        padding: 1px 20px;
+    }
+    .centered {
+        text-align: center;
+    }
+    #logo {
+        position: absolute;
+        top: 32px;
+        right: 48px;
+    }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="content">
+            <div id="logo">
+                <a href="http://www.datalyze-solutions.com"><img src="icons/ds_logo.png"></a>                
+            </div>
+            <h2>Tile Map Scale Plugin</h1>
+            <h3>Functionality</h3>            
+            <p>
+                Most webmaps like OpenStreetMap, Bing, Google, Yahoo, etc. are rendered for specific scales. If they are
+                viewed with a different scale, they appear fuzzy and unsharp. If activated this plugin sets the scale to
+                the next matching scale while zooming in or out.
+            </p>            
+            <h3>Own datasets</h3>
+            <p>
+                The plugin is able to load datasets based on the
+                <a href="http://www.gdal.org/frmt_wms.html">GDAL WMS Driver</a>. You can add your own
+                datasets by creating an XML file in the "datasets" folder. The datasets folder is located in the
+                default plugin folder. Normaly the plugin directory is located in
+                "your user directory"/.qgis/python/plugins/TileMapScalePlugin/. After adding the file
+                press the "refresh" button or restart QGIS to be able to load your file from the dropdown list.
+            </p>
+            <h3>Links</h3>
+            <ul>
+                <li>
+                    You found a bug? You want to contribute with code or ideas? Contact us on the <a href="http://github.com/datalyze-solutions/TileMapScaleLevels">project page</a>
+                </li>
+            </ul>
+            <p class="centered">
+                <a href="http://www.datalyze-solutions.com"><img src="icons/ds_made_by.png" width="196" height="196"></a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+ 

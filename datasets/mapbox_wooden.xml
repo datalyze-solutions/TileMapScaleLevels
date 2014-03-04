@@ -1,0 +1,25 @@
+<GDAL_WMS>
+    <Service name="TMS">
+        <ServerUrl>https://a.tiles.mapbox.com/v3/eleanor.mnyzxgvi/${z}/${x}/${y}.png</ServerUrl>
+    </Service>
+    <DataWindow>
+        <UpperLeftX>-20037508.34</UpperLeftX>
+        <UpperLeftY>20037508.34</UpperLeftY>
+        <LowerRightX>20037508.34</LowerRightX>
+        <LowerRightY>-20037508.34</LowerRightY>
+        <TileLevel>20</TileLevel>
+        <TileCountX>1</TileCountX>
+        <TileCountY>1</TileCountY>
+        <YOrigin>top</YOrigin>
+    </DataWindow>
+    <Projection>EPSG:3857</Projection>
+    <BlockSizeX>256</BlockSizeX>
+    <BlockSizeY>256</BlockSizeY>
+    <BandsCount>3</BandsCount>
+    <MaxConnections>5</MaxConnections>
+    <Cache>	
+        <Path>/tmp/google_wms_cache</Path>
+        <Depth>2</Depth>
+        <Extension>.png</Extension>
+    </Cache>
+</GDAL_WMS>

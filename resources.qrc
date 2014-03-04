@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/help-about.png</file>
+    <file>icons/view-refresh.png</file>
+    <file>icons/list-add.png</file>
+    <file>icon.png</file>
+    <file>icons/draw-freehand.png</file>
+    <file>icons/osm.png</file>
+    <file>icons/go-home.png</file>
+  </qresource>
+</RCC>
