@@ -62,7 +62,7 @@ class TileMapScalePlugin:
     def initGui(self):
         # Create action that will start plugin configuration
         self.action = QAction(
-            QIcon(":/plugins/tilemapscaleplugin/icon.png"),
+            QIcon(":/icons/icon.png"),
             u"TileMapScalePlugin", self.iface.mainWindow())
         # connect the action to the run method
         self.action.triggered.connect(self.showDock)
@@ -100,17 +100,18 @@ class TileMapScalePlugin:
 
         self.dock.buttonInfo.clicked.connect(self.showInfo)
 
-        self.dock.buttonLoadOSM.clicked.connect(self.loadOSM)
         self.dock.buttonLoadUserDataset.clicked.connect(self.loadSelectedUserDataset)
         self.dock.buttonLoadRefreshUserDatasets.clicked.connect(self.initUserDatasets)      
 
         self.initUserDatasets()
+        ## start checking scale changes
         self.canvas.scaleChanged.connect(self.scaleChanged)
 
     def unload(self):
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu(u"&TileMapScalePlugin", self.action)
         self.iface.removeToolBarIcon(self.action)
+        del self.dock
 
     def showDock(self):
         if self.dock.isVisible():
@@ -137,13 +138,6 @@ class TileMapScalePlugin:
         scale = self.scaleCalculator.getScale(zoomlevel)
         self.scaleChanged(scale)
 
-    def loadOSM(self):
-        datasetPath = os.path.join(self.datasetDir, "osm_mapnik.xml")
-        if os.path.exists(datasetPath):
-            self.iface.addRasterLayer(datasetPath, "OpenStreetMap - Mapnik")
-        else:
-            self.iface.messageBar().pushMessage("Error", "Unable to load file %s" % datasetPath, QgsMessageBar.CRITICAL)
-
     def initUserDatasets(self):
         self.dock.comboBoxUserDatasets.clear()
         filenames = os.listdir(self.datasetDir)
@@ -165,19 +159,30 @@ class TileMapScalePlugin:
 
     def scaleChanged(self, scale):
         if self.dock.checkBoxIsActive.isChecked():
+            scale = int(scale)            
+            if scale not in self.scaleCalculator.zoomlevels.values():
+                zoomlevel = self.scaleCalculator.getZoomlevel(scale)
+                if zoomlevel <> None:
+                    newScale = self.scaleCalculator.getScale(zoomlevel)
+                    if scale <> newScale:
+                        ## Disconnect to prevent infinite scaling loop
+                        self.canvas.scaleChanged.disconnect(self.scaleChanged)
+                        self.canvas.zoomScale(newScale)
+                        self.canvas.scaleChanged.connect(self.scaleChanged)
+                        
             ## Disconnect to prevent infinite scaling loop
-            self.canvas.scaleChanged.disconnect(self.scaleChanged)
-            self.dock.spinBoxZoomlevels.valueChanged.disconnect(self.valueChanged)
+            #self.canvas.scaleChanged.disconnect(self.scaleChanged)
+            #self.dock.spinBoxZoomlevels.valueChanged.disconnect(self.valueChanged)
 
-            zoomlevel = self.scaleCalculator.getZoomlevel(scale)
-            if zoomlevel <> None:
-                newScale = self.scaleCalculator.getScale(zoomlevel)
-                self.canvas.zoomScale(newScale)
-                self.dock.sliderZoomlevels.setValue(zoomlevel)
-                self.dock.spinBoxZoomlevels.setValue(zoomlevel)
+            #zoomlevel = self.scaleCalculator.getZoomlevel(scale)
+            #if zoomlevel <> None:
+                #newScale = self.scaleCalculator.getScale(zoomlevel)
+                #self.canvas.zoomScale(newScale)
+                #self.dock.sliderZoomlevels.setValue(zoomlevel)
+                #self.dock.spinBoxZoomlevels.setValue(zoomlevel)
 
-            self.canvas.scaleChanged.connect(self.scaleChanged)
-            self.dock.spinBoxZoomlevels.valueChanged.connect(self.valueChanged)
+            #self.canvas.scaleChanged.connect(self.scaleChanged)
+            #self.dock.spinBoxZoomlevels.valueChanged.connect(self.valueChanged)
 
     def activationStateChanged(self):
         if self.dock.checkBoxIsActive.isChecked():
@@ -212,6 +217,9 @@ class TileMapScalePlugin:
         s = QSettings()
         isActive = s.value("tilemapscalelevels/active", True, type=bool)
         self.dock.checkBoxIsActive.setChecked(isActive)
+
+        if not isActive:
+            self.dock.groupBox.hide()            
 
 
 class dialogInfo(QDialog, Ui_info):

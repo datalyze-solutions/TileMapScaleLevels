@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-## @package TileMapScaleLevels123
+## @package TileMapScaleLevels
 #       Sets the scale to levels according to the Tile Map Specification used by Google, Osm, etc.
 #  @file
 #       Sets the scale to levels according to the Tile Map Specification used by Google, Osm, etc.
@@ -8,7 +8,7 @@
 
 import math
 class TileMapScaleLevels(object):
-    def __init__(self, maxZoomlevel=18, minZoomlevel=0, dpi=96, tileSize=256, earthRadius=6378137):
+    def __init__(self, maxZoomlevel, minZoomlevel=0, dpi=96, tileSize=256, earthRadius=6378137):
         self.__dpi = dpi
         self.inchesPerMeter = 39.37
         self.maxScalePerPixel = 156543.04
@@ -16,9 +16,6 @@ class TileMapScaleLevels(object):
         self.tileSize = tileSize
         self.__maxZoomlevel = maxZoomlevel
         self.__minZoomlevel = minZoomlevel
-
-        self.zoomlevels = {}
-        self.calculateScaleStorage()
 
     def minZoomlevel(self):
         return self.__minZoomlevel
@@ -38,9 +35,7 @@ class TileMapScaleLevels(object):
     def getScale(self, zoomlevel):
         try:
             zoomlevel = int(zoomlevel)
-            scale = (self.dpi() * self.inchesPerMeter * self.maxScalePerPixel) / (math.pow(2, zoomlevel))
-            scale = int(scale)
-            return scale
+            return (self.dpi() * self.inchesPerMeter * self.maxScalePerPixel) / (math.pow(2, zoomlevel))
         except TypeError:
             raise
             #pass
@@ -63,6 +58,5 @@ class TileMapScaleLevels(object):
     def pixelSize(self, zoomlevel):
         return 2.0 * math.pi * self.earthRadius / self.mapWidth(zoomlevel)
 
-    def calculateScaleStorage(self):
-        for zoomlevel in xrange(self.minZoomlevel(), self.maxZoomlevel()):
-            self.zoomlevels[zoomlevel] = self.getScale(zoomlevel)
+# usage:
+# scaleCalculator = TileMapScaleLevels(maxZoomlevel=18, minZoomlevel=0, dpi=self.iface.mainWindow().physicalDpiX())

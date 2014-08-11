@@ -17,6 +17,6 @@
     <BlockSizeY>256</BlockSizeY>
     <BandsCount>3</BandsCount>
     <Cache>
-        <Path>/tmp/gdalwmscache</Path>
-    </Cache>
+        <Path>/tmp/cache_osm_landscape</Path>
+    </Cache>    
 </GDAL_WMS>
