@@ -1,3 +1,4 @@
+/datasets/osm_mapnik.xml.aux.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -38,3 +39,11 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# ignore unfree maps
+*mapbox*
+*stamen*
+*google*
+*.aux*
+*bing*
+*mapquest*

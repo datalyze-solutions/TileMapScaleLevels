@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Karbon, part of Calligra: http://www.calligra.org/karbon -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48pt" height="48pt">
+<defs/>
+<g id="layer0">
+  <path id="path701" transform="translate(4.42481, 4.42476)" fill="#2980b9" fill-rule="evenodd" d="M25.5752 0C11.4517 0 0 11.4448 0 25.5596C0 39.6743 11.4517 51.1505 25.5752 51.1505C39.6986 51.1505 51.1504 39.6743 51.1504 25.5596C51.1504 11.4448 39.6986 0 25.5752 0Z"/>
+  <g id="group0" transform="translate(8.58508, 14.7069)" fill="none">
+   <path id="path841" transform="matrix(0.838569 0 0 1 9.64858 14.4623)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="3.75000000000" stroke-linecap="round" stroke-linejoin="round" d="M0 0L28.0629 0"/>
+   <path id="path1729" transform="matrix(0.838569 0 0 1 15.3044 2.5)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="3.75000000000" stroke-linecap="round" stroke-linejoin="round" d="M0 0L14.5738 0"/>
+   <path id="path1735" transform="matrix(0.838569 0 0 1 2.09642 25.5863)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="3.75000000000" stroke-linecap="round" stroke-linejoin="round" d="M0 0L46.0749 0"/>
+  </g>
+ </g>
+</svg>

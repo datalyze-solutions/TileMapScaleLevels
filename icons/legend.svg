@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Karbon, part of Calligra: http://www.calligra.org/karbon -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48pt" height="48pt">
+<defs/>
+<g id="layer0">
+  <path id="path701" transform="translate(4.42481, 4.42476)" fill="#2980b9" fill-rule="evenodd" d="M25.5752 0C11.4517 0 0 11.4448 0 25.5596C0 39.6743 11.4517 51.1505 25.5752 51.1505C39.6986 51.1505 51.1504 39.6743 51.1504 25.5596C51.1504 11.4448 39.6986 0 25.5752 0Z"/>
+  <path id="path841" transform="matrix(0.838569 0 0 1 28.6117 18.4297)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="3.12500000000" stroke-linecap="round" stroke-linejoin="round" d="M0 0L18.1407 0"/>
+  <path id="rect1717" transform="translate(15.3637, 14.882)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="2.50000000000" stroke-linecap="round" stroke-linejoin="round" d="M0.929389 0L6.16599 0C6.68087 0 7.09538 0.414508 7.09538 0.929389L7.09538 6.16599C7.09538 6.68087 6.68087 7.09538 6.16599 7.09538L0.929389 7.09538C0.414508 7.09538 0 6.68087 0 6.16599L0 0.929389C0 0.414508 0.414508 0 0.929389 0Z"/>
+  <path id="path1729" transform="matrix(0.838569 0 0 1 28.6117 30)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="3.12500000000" stroke-linecap="round" stroke-linejoin="round" d="M0 0L14.8781 0"/>
+  <path id="rect1732" transform="translate(15.3637, 26.4523)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="2.50000000000" stroke-linecap="round" stroke-linejoin="round" d="M0.929389 0L6.16599 0C6.68087 0 7.09538 0.414508 7.09538 0.929389L7.09538 6.16599C7.09538 6.68087 6.68087 7.09538 6.16599 7.09538L0.929389 7.09538C0.414508 7.09538 0 6.68087 0 6.16599L0 0.929389C0 0.414508 0.414508 0 0.929389 0Z"/>
+  <path id="path1735" transform="matrix(0.838569 0 0 1 28.6117 41.5703)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="3.12500000000" stroke-linecap="round" stroke-linejoin="round" d="M0 0L19.5907 0"/>
+  <path id="rect1737" transform="translate(15.3637, 38.0227)" fill="#f6f7fc" fill-rule="evenodd" stroke="#f6f7fc" stroke-width="2.50000000000" stroke-linecap="round" stroke-linejoin="round" d="M0.929389 0L6.16599 0C6.68087 0 7.09538 0.414508 7.09538 0.929389L7.09538 6.16599C7.09538 6.68087 6.68087 7.09538 6.16599 7.09538L0.929389 7.09538C0.414508 7.09538 0 6.68087 0 6.16599L0 0.929389C0 0.414508 0.414508 0 0.929389 0Z"/>
+ </g>
+</svg>

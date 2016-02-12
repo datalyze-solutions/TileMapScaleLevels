@@ -37,7 +37,7 @@ PY_FILES = tilemapscaleplugin.py __init__.py tilemapscalelevelswidget.py info.py
 
 EXTRAS = icon.png metadata.txt
 
-UI_FILES = ui_info.py ui_tilemapscalelevelswidget.py
+UI_FILES = ui_info.py ui_tilemapscalelevelswidget.py ui_hud.py
 
 RESOURCE_FILES = resources_rc.py
 

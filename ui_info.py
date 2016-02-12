@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'ui_info.ui'
 #
-# Created: Mon Mar  3 16:55:16 2014
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Thu Feb 11 22:30:36 2016
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_info(object):
     def setupUi(self, info):
@@ -22,13 +31,13 @@ class Ui_info(object):
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.buttonHome = QtGui.QToolButton(info)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/go-home.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/go-home.svg")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.buttonHome.setIcon(icon)
         self.buttonHome.setIconSize(QtCore.QSize(22, 22))
         self.buttonHome.setObjectName(_fromUtf8("buttonHome"))
         self.verticalLayout.addWidget(self.buttonHome)
         self.webView = QtWebKit.QWebView(info)
-        self.webView.setUrl(QtCore.QUrl(_fromUtf8("about:blank")))
+        self.webView.setProperty("url", QtCore.QUrl(_fromUtf8("about:blank")))
         self.webView.setObjectName(_fromUtf8("webView"))
         self.verticalLayout.addWidget(self.webView)
 
@@ -36,10 +45,10 @@ class Ui_info(object):
         QtCore.QMetaObject.connectSlotsByName(info)
 
     def retranslateUi(self, info):
-        info.setWindowTitle(QtGui.QApplication.translate("info", "Info", None, QtGui.QApplication.UnicodeUTF8))
-        self.buttonHome.setToolTip(QtGui.QApplication.translate("info", "load selected dataset", None, QtGui.QApplication.UnicodeUTF8))
-        self.buttonHome.setStatusTip(QtGui.QApplication.translate("info", "load selected dataset", None, QtGui.QApplication.UnicodeUTF8))
-        self.buttonHome.setText(QtGui.QApplication.translate("info", "OSM", None, QtGui.QApplication.UnicodeUTF8))
+        info.setWindowTitle(_translate("info", "Info", None))
+        self.buttonHome.setToolTip(_translate("info", "load selected dataset", None))
+        self.buttonHome.setStatusTip(_translate("info", "load selected dataset", None))
+        self.buttonHome.setText(_translate("info", "OSM", None))
 
 from PyQt4 import QtWebKit
 import resources_rc
