@@ -12,6 +12,7 @@
 name=Tile Map Scale Plugin
 qgisMinimumVersion=2.0
 description=Let you add tiled datasets (GDAL WMS) and shows them in the correct scale.
+about=Tiled datasets like OSM are rendered for specific scales. If the scale is not the one the tiles are rendered for, the map is displayed unreadable. The plugin calculates the right scales and let you add GDAL WMS datasets.
 version=1.0
 author=Matthias Ludwig - Datalyze Solutions
 email=m.ludwig@datalyze-solutions.com

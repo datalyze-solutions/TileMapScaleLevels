@@ -29,12 +29,11 @@ from qgis.core import *
 from qgis.gui import *
 
 from tms.canvas_adapter import TileMapServiceCanvasAdapter
-from state_store import StateStore
+from utils.state_store import StateStore
 import resources_rc
-from colors import FLAT_RED, FLAT_GREEN, FLAT_BLUE
+from utils.colors import FLAT_RED, FLAT_GREEN, FLAT_BLUE
 
 from tilemapscalelevelswidget import TileMapScaleLevelsDockWidget
-from tilemapscalelevels import TileMapScaleLevels
 
 from ui_info import Ui_info
 from ui_hud import Ui_hud
@@ -353,6 +352,7 @@ class DialogInfo(QDialog, Ui_info):
     def __init__(self, workingDir, infoHtml="README.html"):
         super(DialogInfo, self).__init__()
         self.setupUi(self)
+        self.resize(1280, 768)
 
         self.workingDir = workingDir
         self.infoHtml = infoHtml

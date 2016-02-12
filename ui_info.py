@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_info.ui'
 #
-# Created: Thu Feb 11 22:30:36 2016
+# Created: Fri Feb 12 17:34:10 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_info(object):
     def setupUi(self, info):
         info.setObjectName(_fromUtf8("info"))
-        info.resize(818, 724)
+        info.resize(1024, 768)
         self.verticalLayout = QtGui.QVBoxLayout(info)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.buttonHome = QtGui.QToolButton(info)

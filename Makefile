@@ -25,23 +25,25 @@ QGISDIR=.qgis2
 # Makefile for a PyQGIS plugin
 
 # translation
-SOURCES = tilemapscaleplugin.py ui_info.py __init__.py info.py tilemapscalelevelswidget.py ui_tilemapscalelevelswidget.py
+SOURCES = tilemapscaleplugin.py ui_info.py __init__.py tilemapscalelevelswidget.py ui_tilemapscalelevelswidget.py
 #TRANSLATIONS = i18n/tilemapscaleplugin_en.ts
 TRANSLATIONS =
 
 # global
 
-PLUGINNAME = tilemapscaleplugin
+PLUGINNAME = TileMapScaleLevels
 
-PY_FILES = tilemapscaleplugin.py __init__.py tilemapscalelevelswidget.py info.py
+PY_FILES = tilemapscaleplugin.py __init__.py tilemapscalelevelswidget.py
 
-EXTRAS = icon.png metadata.txt
+EXTRAS = icon.png metadata.txt README.html
 
 UI_FILES = ui_info.py ui_tilemapscalelevelswidget.py ui_hud.py
 
 RESOURCE_FILES = resources_rc.py
 
 HELP = help/build/html
+
+EXTRA_FOLDERS = tms datasets utils icons
 
 default: compile
 
@@ -67,12 +69,18 @@ deploy: compile doc transcompile
 	cp -vf $(EXTRAS) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vfr i18n $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vfr $(HELP) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/help
+	cp -vfr $(EXTRA_FOLDERS) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/
 
 # The dclean target removes compiled python files from plugin directory
 # also delets any .svn entry
 dclean:
 	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME) -iname "*.pyc" -delete
 	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME) -iname ".svn" -prune -exec rm -Rf {} \;
+	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/icons -iname "*.svg" -type f -delete
+	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/icons -iname "*.xcf" -type f -delete
+	# delete unfree datasets
+	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/datasets -not -iname "*osm*" -type f -delete
+	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/datasets -iname "*aux.xml" -type f -delete
 
 # The derase deletes deployed plugin
 derase:
