@@ -98,6 +98,8 @@ class TileMapScalePlugin(QObject):
         self.states.showDock.register(self.dock, "setVisible", bool)
         self.states.showDock.register(self.dock.actionTMS, "setChecked", bool)
         self.dock.actionTMS.triggered.connect(self.states.showDock.setValue)
+        self.dock.visibilityChanged.connect(self.states.showDock.setValue)
+        self.dock.visibilityChanged.connect(self._updateCheckedComponents)
         self.hud.toolButtonTMS.toggled.connect(self.switchIsActiveIcon)
         self.dock.actionTMS.toggled.connect(self.switchIsActiveIcon)
 
@@ -108,8 +110,8 @@ class TileMapScalePlugin(QObject):
         self.dock.actionHUD.triggered.connect(self.states.showHUD.setValue)
         self.dock.buttonInfo.clicked.connect(self.showInfo)
         self.dock.checkBoxHUD.stateChanged.connect(self.states.showHUD.setValue)
-        self.dock.checkBoxHUD.stateChanged.connect(self._updateCheckedComponents)
         self.dock.actionHUD.toggled.connect(self.switchIsActiveIcon)
+        self.dock.checkBoxHUD.stateChanged.connect(self._updateCheckedComponents)
 
         # zoomlevel
         self.states.zoomlevel.register(self.hud.sliderZoomlevels, "setValue", int)

@@ -5,6 +5,6 @@ class TileMapScaleLevelsDockWidget(QtGui.QDockWidget, Ui_TileMapScaleLevelsDockW
 
     def __init__(self):
         super(TileMapScaleLevelsDockWidget, self).__init__()
-        
+
         self.setupUi(self)
         self.show()

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_tilemapscalelevelswidget.ui'
 #
-# Created: Fri Feb 12 16:22:49 2016
+# Created: Tue Feb 23 10:18:47 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -142,7 +142,7 @@ class Ui_TileMapScaleLevelsDockWidget(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName(_fromUtf8("scrollArea"))
         self.scrollAreaWidgetContents = QtGui.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -22, 415, 201))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 237, 201))
         self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
         self.verticalLayout_3 = QtGui.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
@@ -234,7 +234,7 @@ class Ui_TileMapScaleLevelsDockWidget(object):
         self.actionLayers.setObjectName(_fromUtf8("actionLayers"))
 
         self.retranslateUi(TileMapScaleLevelsDockWidget)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QObject.connect(self.toggleDpiToolButton, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), self.dpiSpinBox.setEnabled)
         QtCore.QMetaObject.connectSlotsByName(TileMapScaleLevelsDockWidget)
 
@@ -270,7 +270,7 @@ class Ui_TileMapScaleLevelsDockWidget(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.OptionsTab), _translate("TileMapScaleLevelsDockWidget", "Options", None))
         self.actionHUD.setText(_translate("TileMapScaleLevelsDockWidget", "Head-up display", None))
         self.actionHUD.setToolTip(_translate("TileMapScaleLevelsDockWidget", "Head-up display", None))
-        self.actionTMS.setText(_translate("TileMapScaleLevelsDockWidget", "TMS", None))
+        self.actionTMS.setText(_translate("TileMapScaleLevelsDockWidget", "TMS Widget", None))
         self.actionTMS.setToolTip(_translate("TileMapScaleLevelsDockWidget", "Plugin widget", None))
         self.actionLayers.setText(_translate("TileMapScaleLevelsDockWidget", "Layers", None))
         self.actionLayers.setToolTip(_translate("TileMapScaleLevelsDockWidget", "Add Layer", None))

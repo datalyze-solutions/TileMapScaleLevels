@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_hud.ui'
 #
-# Created: Fri Feb 12 14:14:38 2016
+# Created: Tue Feb 23 10:18:47 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
